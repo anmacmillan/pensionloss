@@ -6,6 +6,22 @@ from io import BytesIO
 from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
+
+# Hide Streamlit elements to look like a native website tool
+st.markdown("""
+    <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        .block-container {
+            padding-top: 1rem;
+            padding-bottom: 0rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 # -----------------------------------------------------------------------------
 # OGDEN TABLE DATA MANAGER (DEMO DATASET)
 # -----------------------------------------------------------------------------
