@@ -6,6 +6,10 @@ from io import BytesIO
 from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
+# -----------------------------------------------------------------------------
+# GLOBAL STYLING & CONFIG
+# -----------------------------------------------------------------------------
+st.set_page_config(page_title="Pension Loss Calculator", page_icon="⚖️", layout="wide")
 
 # Hide Streamlit elements to look like a native website tool
 st.markdown("""
@@ -114,12 +118,36 @@ def generate_report(data, results, method):
 # -----------------------------------------------------------------------------
 # UI SETUP
 # -----------------------------------------------------------------------------
-st.set_page_config(page_title="Pension Loss Calculator", page_icon="⚖️", layout="wide")
 st.title("⚖️ Enhanced Judicial Pension Loss Calculator")
 st.markdown("""
 **Reference:** *Principles for Compensating Pension Loss (4th Ed, 3rd Rev 2021)*.
 Includes **Accelerated Receipt** logic for Lump Sums.
 """)
+
+# --- LEGAL DISCLAIMER (Styled to match website) ---
+st.markdown("""
+    <style>
+        .disclaimer-box {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            padding: 1.2rem;
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 0;
+        }
+    </style>
+    <div class="disclaimer-box">
+        <strong>For Educational & Illustrative Purposes Only</strong><br><br>
+        This is not legal advice. The output is an estimation based on the variables you input. It is not a substitute for a formal opinion from a qualified barrister or solicitor on the specific facts of a case.
+        Use of this tool does not create a barrister-client relationship.
+        The figures generated are for informational purposes only and should not be relied upon for making any legal, financial, or strategic decisions.
+        The accuracy of the output is entirely dependent on the assumptions and data entered. No warranty is given as to its accuracy.
+        No liability is accepted for any loss or damage arising from the use of this tool. For professional advice, please seek a formal opinion.
+    </div>
+""", unsafe_allow_html=True)
 
 # Sidebar
 st.sidebar.header("Configuration")
