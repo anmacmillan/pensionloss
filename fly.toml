@@ -1,4 +1,3 @@
-app = "pensionloss"
 primary_region = "lhr"
 
 [build]
